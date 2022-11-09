@@ -1,0 +1,30 @@
+<body>
+<div class="container">
+    <div class="row col.md-6 col-md-offset-2 custyle">
+        <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>FromPlace</th>
+                    <th>Numberofdays</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let tourist of tourists">
+                    <td>{{tourist.id}}</td>
+                    <td>{{tourist.fname}}</td>
+                    <td>{{tourist.lname}}</td>
+                    <td>{{tourist.gender}}</td>
+                    <td>{{tourist.age}}</td>
+                    <td>{{tourist.fromplace}}</td>
+                    <td>{{tourist.noofdays}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>

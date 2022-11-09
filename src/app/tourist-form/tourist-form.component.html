@@ -1,0 +1,52 @@
+<body>
+<div class="container col-md-6 offset-md-3">
+    <h1 style="color: green;">Tourist Login</h1>
+    <form (ngSubmit)="userLogin()" [formGroup]="touristform">
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">Id : </label>
+            <input required formControlName="id" id="id" class="form-control" [(ngModel)]="tourist.id" type="number" placeholder="Enter Id" />
+            <small  *ngIf="touristform.get('id').invalid && touristform.get('id').touched"class="text-danger">Id is required and Maximum is 4 digit and Should be Number Only</small>
+        </div>
+         <div class="form-group">
+            <label for="exampleForm" class="form-label">First Name :</label>
+            <input required class="form-control" id="fname" type="text" [(ngModel)]="tourist.fname" formControlName="fname" placeholder="Enter First Name" />
+            <small *ngIf="touristform.get('fname').invalid && touristform.get('fname').touched"class="text-danger">FirstName is required and Maxlength is 15 Characters and Alphabets only</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">Last Name :</label>
+            <input required class="form-control" id="lname" type="text" [(ngModel)]="tourist.lname" formControlName="lname" placeholder="Enter Last Name" />
+            <small *ngIf="touristform.get('lname').invalid && touristform.get('lname').touched"class="text-danger">LastName is required and Maxlength is 12 Characters and Alphabets only</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">Gender:</label><br>
+            <input type="radio" required id="gender" formControlName="gender" value="Male" class="form-check-input" [(ngModel)]="tourist.gender">Male
+            &nbsp;&nbsp;&nbsp;
+            <input type="radio" required id="gender" formControlName="gender" value="Female" class="form-check-input" [(ngModel)]="tourist.gender">Female
+            <small *ngIf="touristform.get('gender').invalid && touristform.get('gender').touched"class="text-danger">Gender is required</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">Age :</label>
+            <input required class="form-control" id="age" type="number" [(ngModel)]="tourist.age" formControlName="age" placeholder="Enter Age" />
+            <small *ngIf="touristform.get('age').invalid && touristform.get('age').touched"class="text-danger">Age is required and it should be lessthan 90</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">From Place :</label>
+            <input required class="form-control" id="fromplace" type="text" [(ngModel)]="tourist.fromplace" formControlName="fromplace" placeholder="Enter From Place" />
+            <small *ngIf="touristform.get('fromplace').invalid && touristform.get('fromplace').touched"class="text-danger">FromPlace is Required and Only Alphabets</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleForm" class="form-label">Number Of Days :</label>
+            <input required class="form-control" id="numberofdays" type="number" [(ngModel)]="tourist.noofdays" formControlName="noofdays" placeholder="Enter Number Of Days" />
+            <small *ngIf="touristform.get('noofdays').invalid && touristform.get('noofdays').touched"class="text-danger">Numberofdays is required</small>
+        </div>
+        
+        <!--
+        <div class="form-group">
+            <input class="btn-btn-success" [disabled]="touristform.invalid" id="register" type="submit" formControlName="submit-reg" value="Login" (click)="registerNow()">
+        </div>
+    -->
+    <button type="submit" class="btn btn-primary " id="register" [disabled]="touristform.invalid" (click)="registerNow()" >Register</button> 
+        
+</form>
+</div>
+</body>
